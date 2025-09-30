@@ -26,6 +26,6 @@ if ! python -c "import pyautogui" 2>/dev/null; then
     fi
 fi
 
-# Pythonスクリプトを実行
-python auto_click.py
+# Pythonスクリプトを実行（引数を渡す）
+python auto_click.py "$@"
 
