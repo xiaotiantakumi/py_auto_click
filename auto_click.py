@@ -63,12 +63,8 @@ def parse_time_argument(time_str):
         if not (0 <= minute <= 59):
             raise ValueError(f"分は0-59の範囲で指定してください: {minute}")
         
-        # datetimeオブジェクトを作成
+        # datetimeオブジェクトを作成（その日の指定時間）
         target_time = datetime.datetime.combine(today, datetime.time(hour, minute))
-        
-        # 指定された時間が過去の場合は翌日に設定
-        if target_time <= datetime.datetime.now():
-            target_time += datetime.timedelta(days=1)
         
         return target_time
         
